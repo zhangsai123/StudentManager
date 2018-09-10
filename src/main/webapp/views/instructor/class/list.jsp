@@ -4,21 +4,20 @@
 <!doctype html>
 <html>
 	<head>
-		<title>学院基本信息管理</title>
+		<title>班级信息管理</title>
 		<%@ include file="../common/head.jsp" %>
-		<link rel="stylesheet" href="${website}/resources/css/admin/student-info-management/student-info-management.css" />
+		<link rel="stylesheet" href="${website}resources/css/teacher/student-info-management/student-info-management.css" />
 	</head>
 	<body>
-		<%@ include file="../common/header.jsp" %>
-		<div class="page clearfix">
-			<%@ include file="../common/sidebar.jsp" %>
+	<%@ include file="../common/header.jsp" %>
+	<div class="page clearfix">
+		<%@ include file="../common/sidebar.jsp" %>
 			<div class="holder">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
 							<ol class="breadcrumb">
-								<li><a href="#"><i class="fa fa-home"></i>&nbsp;管理员</a></li>
-								<li><a href="#">学院基本信息管理</a></li>
+								<li><a href="#"><i class="fa fa-home"></i>&nbsp;辅导员</a></li>
 								<li class="active">班级信息管理</li>
 							</ol>
 						</div>
@@ -26,10 +25,9 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4>班级信息列表</h4>
-									<a class="btn btn-primary add" href="${website}admin/class/insert"><i class="fa fa-plus"></i>&nbsp;添加</a>
 								</div>
 								<div class="panel-body">
-									<form class="form-horizontal" action="${website}admin/class" method="post">
+									<form class="form-horizontal" action="${website}instructor/class" method="post">
 										<div class="form-group">
 											<div class="col-sm-1 col-sm-offset-3">
 												<label class="control-label">关键字</label>
@@ -54,18 +52,17 @@
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach var="classDto" items="${listClass}">
+											<c:forEach var="classDto" items="${listClass}">
 												<tr>
 													<td>${classDto.id}</td>
 													<td>${classDto.classesName}</td>
 													<td>${classDto.departmentName}</td>
 													<td>${classDto.schoolName}</td>
-									    			<td>
-									    				<a class="btn btn-primary btn-xs" href="${website}admin/class/edit?id=${classDto.id}"><i class="fa fa-pencil"></i>&nbsp;编辑</a>
-									    				<a class="btn btn-primary btn-xs J_del" href="${website}admin/class/delete?id=${classDto.id}"><i class="fa fa-times"></i>&nbsp;删除</a>
-									    			</td>
-									    		</tr
-												</c:forEach>
+													<td>
+														<a class="btn btn-primary btn-xs" href="${website}instructor/class/edit?id=${classDto.id}"><i class="fa fa-pencil"></i>&nbsp;编辑</a>
+													</td>
+												</tr>
+											</c:forEach>
 											</tbody>
 										</table>
 									</div>
