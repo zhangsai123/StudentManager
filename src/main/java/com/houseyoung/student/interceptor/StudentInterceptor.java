@@ -23,7 +23,7 @@ public class StudentInterceptor extends HandlerInterceptorAdapter{
         if(request.getServletPath().startsWith(loginUrl)) {
             return true;
         }
-
+        
         //登录后放行其他页
         HttpSession session = request.getSession();
         if (session.getAttribute("studentDto") != null) {

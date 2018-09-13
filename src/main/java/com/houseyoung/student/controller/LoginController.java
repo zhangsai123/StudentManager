@@ -111,7 +111,6 @@ public class LoginController {
                 //显示右上角个人信息
                 String studentId = (String) request.getSession().getAttribute("studentDto");
                 model.addAttribute("studentName", studentService.showHimself(studentId).getStudentName());
-
                 return "student/index";
             } else if (request.getSession().getAttribute("instructor") != null || request.getSession().getAttribute("admin") != null){
                 //若已使用管理员/辅导员身份登录，则跳转至屏蔽页

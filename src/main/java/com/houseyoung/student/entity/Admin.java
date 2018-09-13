@@ -8,8 +8,6 @@ import javax.persistence.Table;
 /**
  * Created by houseyoung on 15/10/23 22:17.
  */
-@Entity
-@Table(name = "t_admin")
 public class Admin {
     @Id
     private Integer id;
