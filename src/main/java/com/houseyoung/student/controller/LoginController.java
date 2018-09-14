@@ -131,7 +131,7 @@ public class LoginController {
                 //清除管理员、辅导员登录信息
                 request.getSession().removeAttribute("admin");
                 request.getSession().removeAttribute("instructor");
-
+                
                 //在Session中记录StudentId
                 request.getSession().setAttribute("studentDto", studentDto.getStudentId());
                 return "redirect:index";

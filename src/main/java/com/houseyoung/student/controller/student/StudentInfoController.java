@@ -114,7 +114,7 @@ public class StudentInfoController {
             return "student/student_info/list";
         }
     }
-
+    
     @RequestMapping(value = "edithimself", method = RequestMethod.POST)
     public String editPassword(StudentDto studentDto, String password, Model model, HttpServletRequest request) throws Exception{
         try {
@@ -161,7 +161,6 @@ public class StudentInfoController {
             //显示右上角个人信息
             model.addAttribute("studentName", studentService.showHimself(studentId).getStudentName());
             model.addAttribute("studentId", studentId);
-
             List<ScoreDto> listHimself = scoreService.listHimself(studentId);
             model.addAttribute("listHimself", listHimself);
             return "student/student_info/score";
